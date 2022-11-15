@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
-    new Dotenv();
+    new Dotenv(),
     new HtmlWebpackPlugin({
       title: 'template-repo',
       template: './src/index.html',
