@@ -1,23 +1,17 @@
 <html lang="en-US">
 <head>
-  <title>Weather</title>
+  <title>Name Probability</title>
 </head>
 <body>
   <div class="container">
-    <h1>Get Weather Conditions From Anywhere!</h1>
-    <p>To get the current weather conditions for a location, please enter the city name or the city and state separated by a comma. Here are three examples:</p>
-    <pre>
-      Portland
-      Atlanta, Georgia
-      cairo
-    </pre>
+    <h1>Where's that person from?</h1>
+    <p>Out of 114.541.298 names collected across over 100 countries!</p>
     <form>
       <label for="location">Enter a location:</label>
       <input id="location" type="text" name="location">
-      <button type="submit" class="btn-success" id="weatherLocation">Get Current Temperature and Humidity</button>
+      <button type="submit" class="btn-success" id="weatherLocation">Get name information</button>
     </form>
-    <p id="showResponse"></p>
-    <p id="windarrow"></p>
+    <p id="showResponse"><ul id="top-five"></ul></p>
   </div>
 </body>
 </html>

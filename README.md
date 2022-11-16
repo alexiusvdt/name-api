@@ -15,7 +15,7 @@
 * eslint
 * jest
 * babel
-*  [add more as they come!]
+*
 
 ## Description
  keep it brief!
@@ -26,14 +26,13 @@
 * Clone this repo & navigate to the root directory
 * install all packages with $npm install
 * build the project using $npm run build
-* lint js files in src with $npm run lint
 * start a dev server with $npm run start
-* run tests with Jest using $npm run test
 
 
 
 ## Known Bugs
 
+* API will report "SQ" for country code which is not officially assigned under [ISO_3166-1_alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), this parses as undefined. 
 * If you find additional bugs not listed here, please email me at alex.johnson293@gmail.com with the subject **[_Repo Name_] Bug** and include:
   * BUG: _A brief description of the bug_
   * FIX: _Suggestion for solution (if you have one!)_

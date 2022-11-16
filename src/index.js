@@ -15,7 +15,7 @@ function getNationality(name) {
 }
 
 function toPercent(apiData) {
-  let percent = apiData * 100;
+  let percent = Number((apiData * 100).toFixed(2));
   return percent;
 }
 
@@ -23,7 +23,7 @@ function countryName(data) {
   const countries = require("i18n-iso-countries");
   countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
   let list = countries.getNames("en", {select: "official"});
-  let target = data[0].country[0].country_id;
+  let target = data;
   let result;
   Object.entries(list).forEach(function (country) { 
     if (country.includes(target)) {
@@ -38,9 +38,15 @@ function countryName(data) {
 
 function printElements(data) {
   // console.log(data);
-  let fullName = countryName(data);
-  let top = toPercent(data[0].country[0].probability);
-  document.querySelector('#showResponse').innerText = `The name ${data[1]} is most likely to be from ${fullName} with ${top}% probability.`;
+  document.querySelector('#showResponse').innerText = `The name ${data[1]} is most likely to be from the following countries: `;
+  for (let i = 0; i < 5; i++) {
+  let fullName = countryName(data[0].country[i].country_id);
+  let top = toPercent(data[0].country[i].probability);
+  const ul = document.getElementById('top-five');
+  let li = document.createElement('li');
+  li.append(`${fullName} with ${top}% probability.`);
+  ul.append(li);
+  }
 }
 
 function printError(error) {
