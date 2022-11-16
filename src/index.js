@@ -46,4 +46,3 @@ function handleFormSubmission(event) {
 window.addEventListener("load", function() {
   document.querySelector('form').addEventListener("submit", handleFormSubmission);
 });
-
