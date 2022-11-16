@@ -14,33 +14,71 @@ function getNationality(name) {
   });
 }
 
-function toPercent(apiData) {
-  let percent = apiData * 100;
-  return percent;
-}
+// function toPercent(apiData) {
+//   let percent = apiData * 100;
+//   return percent;
+// }
 
-function countryName(data) {
-  const countries = require("i18n-iso-countries");
-  countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
-  let list = countries.getNames("en", {select: "official"});
-  let target = data[0].country[0].country_id;
-  let result;
-  Object.entries(list).forEach(function (country) { 
-    if (country.includes(target)) {
-      result = country[1];
-      // console.log('result', result)
-    }
+// function countryName(data) {
+//   const countries = require("i18n-iso-countries");
+//   countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
+//   let list = countries.getNames("en", {select: "official"});
+//   let target = data[0].country[0].country_id;
+//   let result;
+//   Object.entries(list).forEach(function (country) { 
+//     if (country.includes(target)) {
+//       result = country[1];
+//       // console.log('result', result)
+//     }
+//   });
+//   return result;
+// }
+
+
+// backup of original name function
+// function countryName(data) {
+//   const countries = require("i18n-iso-countries");
+//   countries.registerLocale(require("i18n-iso-countries/langs/en.json"));
+//   let list = countries.getNames("en", {select: "official"});
+//   let target = data[0].country[0].country_id;
+//   let result;
+//   Object.entries(list).forEach(function (country) { 
+//     if (country.includes(target)) {
+//       result = country[1];
+//       // console.log('result', result)
+//     }
+//   });
+//   return result;
+// }
+
+function topFive(data) {
+  let locations = [];
+  Object.values(data).forEach(key => {
+  locations.push(key)
   });
-  return result;
-}
+  console.log(locations);
+  return locations;
+  }
+
+
 
 // UI Logic
 
 function printElements(data) {
   // console.log(data);
-  let fullName = countryName(data);
-  let top = toPercent(data[0].country[0].probability);
-  document.querySelector('#showResponse').innerText = `The name ${data[1]} is most likely to be from ${fullName} with ${top}% probability.`;
+  //transforms response into array of 5 objects
+  let location = topFive(data[0].country);
+  //pop each object out & translate
+  //run countryName() on the list 
+  //run toPercent
+  //append to list
+
+
+  // let string = JSON.stringify(location)
+  // let fullName = countryName(location);
+  // let top = toPercent(location[0].probability);
+  document.querySelector('#showResponse').innerText = `Here are the top five results for ${data[1]} with the related probability:`;
+
 }
 
 function printError(error) {

@@ -1,23 +1,17 @@
 <html lang="en-US">
 <head>
-  <title>Weather</title>
+  <title>Name by Nationality</title>
 </head>
 <body>
   <div class="container">
-    <h1>Get Weather Conditions From Anywhere!</h1>
-    <p>To get the current weather conditions for a location, please enter the city name or the city and state separated by a comma. Here are three examples:</p>
-    <pre>
-      Portland
-      Atlanta, Georgia
-      cairo
-    </pre>
+    <h1>Where is this Person From?</h1>
+    <p>Enter a name & we will report the statistically most likely country for a given name.</p>
     <form>
-      <label for="location">Enter a location:</label>
+      <label for="location">Enter a name:</label>
       <input id="location" type="text" name="location">
-      <button type="submit" class="btn-success" id="weatherLocation">Get Current Temperature and Humidity</button>
+      <button type="submit" class="btn-success" id="namelocation">See results</button>
     </form>
     <p id="showResponse"></p>
-    <p id="windarrow"></p>
   </div>
 </body>
 </html>
