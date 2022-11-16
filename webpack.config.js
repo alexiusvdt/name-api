@@ -19,7 +19,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'template-repo',
+      title: 'name-api',
       template: './src/index.html',
       inject: 'body'
     })
