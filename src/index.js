@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import WeatherService from './weather-service.js'
+import NationalityService from './js/nationality-service.js'
 
 // Business Logic
 
